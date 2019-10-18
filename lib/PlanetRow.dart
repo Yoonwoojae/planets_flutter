@@ -1,33 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:planets_flutter/model/Planet.dart';
 
-final planetThumbnail = new Container(
-  margin: new EdgeInsets.symmetric(vertical: 16.0),
-  alignment: FractionalOffset.centerLeft,
-  child: new Image(
-    image: new AssetImage("assets/img/mars.png"),
-    height: 92.0,
-    width: 92.0,
-  ),
-);
+Widget planetThumbnail(Planet planet) {
+  return Container(
+    margin: EdgeInsets.symmetric(vertical: 16.0),
+    alignment: FractionalOffset.centerLeft,
+    child: Image(
+      image: AssetImage(planet.image),
+      height: 92.0,
+      width: 92.0,
+    ),
+  );
+}
 
-final planetCard = new Container(
-  height: 124.0,
-  margin: new EdgeInsets.only(left: 46.0),
-  decoration: new BoxDecoration(
-    color: new Color(0xFF333366),
-    shape: BoxShape.rectangle,
-    borderRadius: new BorderRadius.circular(8.0),
-    boxShadow: <BoxShadow>[
-      new BoxShadow(
-        color: Colors.black12,
-        blurRadius: 10.0,
-        offset: new Offset(0.0, 10.0),
-      ),
-    ],
-  ),
-);
+Widget planetCard() {
+  return Container(
+    height: 124.0,
+    margin: EdgeInsets.only(left: 46.0),
+    decoration: BoxDecoration(
+      color: Color(0xFF333366),
+      shape: BoxShape.rectangle,
+      borderRadius: BorderRadius.circular(8.0),
+      boxShadow: <BoxShadow>[
+        BoxShadow(
+          color: Colors.black12,
+          blurRadius: 10.0,
+          offset: Offset(0.0, 10.0),
+        ),
+      ],
+    ),
+  );
+}
 
 class PlanetRow extends StatelessWidget {
+  final Planet planet;
+
+  PlanetRow(this.planet);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,8 +47,8 @@ class PlanetRow extends StatelessWidget {
       ),
       child: Stack(
         children: <Widget>[
-          planetCard,
-          planetThumbnail,
+          planetCard(),
+          planetThumbnail(planet),
         ],
       ),
     );
