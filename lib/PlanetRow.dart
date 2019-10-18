@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planets_flutter/model/Planet.dart';
 
-Widget planetThumbnail(Planet planet) {
+Container planetThumbnail(Planet planet) {
   return Container(
     margin: EdgeInsets.symmetric(vertical: 16.0),
     alignment: FractionalOffset.centerLeft,
@@ -13,7 +13,7 @@ Widget planetThumbnail(Planet planet) {
   );
 }
 
-Widget planetCard() {
+Container planetCard(Planet planet) {
   return Container(
     height: 124.0,
     margin: EdgeInsets.only(left: 46.0),
@@ -26,6 +26,52 @@ Widget planetCard() {
           color: Colors.black12,
           blurRadius: 10.0,
           offset: Offset(0.0, 10.0),
+        ),
+      ],
+    ),
+    child: planetCardContent(planet),
+  );
+}
+
+Container planetCardContent(Planet planet) {
+  return Container(
+    margin: EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
+    constraints: BoxConstraints.expand(),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 4.0),
+        Text(
+          planet.name,
+          style: headerTextStyle(),
+        ),
+        SizedBox(height: 10.0),
+        Text(
+          planet.location,
+          style: subHeaderTextStyle(),
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 8.0),
+          height: 2.0,
+          width: 18.0,
+          color: Color(0xff00c6ff),
+        ),
+        Row(
+          children: <Widget>[
+            Image.asset("assets/img/ic_distance.png", height: 12.0),
+            Container(width: 8.0),
+            Text(
+              planet.distance,
+              style: regularTextStyle(),
+            ),
+            Container(width: 24.0),
+            Image.asset("assets/img/ic_gravity.png", height: 12.0),
+            Container(width: 8.0),
+            Text(
+              planet.gravity,
+              style: regularTextStyle(),
+            ),
+          ],
         ),
       ],
     ),
@@ -47,10 +93,34 @@ class PlanetRow extends StatelessWidget {
       ),
       child: Stack(
         children: <Widget>[
-          planetCard(),
+          planetCard(planet),
           planetThumbnail(planet),
         ],
       ),
     );
   }
+}
+
+TextStyle baseTextStyle() {
+  return TextStyle(fontFamily: 'Poppins');
+}
+
+TextStyle headerTextStyle() {
+  return baseTextStyle().copyWith(
+    color: Colors.white,
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+  );
+}
+
+TextStyle regularTextStyle() {
+  return baseTextStyle().copyWith(
+    color: Color(0xffb6b2df),
+    fontSize: 9.0,
+    fontWeight: FontWeight.w400,
+  );
+}
+
+TextStyle subHeaderTextStyle() {
+  return regularTextStyle().copyWith(fontSize: 12.0);
 }
