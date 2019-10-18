@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage> {
           HomePageBody(),
         ],
       ),
-      backgroundColor: Colors.deepPurpleAccent,
     );
   }
 }
