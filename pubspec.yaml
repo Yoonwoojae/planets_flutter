@@ -29,5 +29,5 @@ flutter:
           weight: 400
 
   assets:
-    - assets/img/mars.png
+    - assets/img/
 
