@@ -7,9 +7,9 @@ class HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemBuilder: (context, index) => new PlanetRow(planets[index]),
+        itemBuilder: (context, index) => PlanetRow(planets[index]),
         itemCount: planets.length,
-        itemExtent: 152.0,
+        padding: EdgeInsets.symmetric(vertical: 16.0),
       ),
     );
   }
