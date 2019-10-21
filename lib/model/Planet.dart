@@ -6,6 +6,7 @@ class Planet {
   final String gravity;
   final String description;
   final String image;
+  final String backgroundImg;
 
   Planet({
     this.id,
@@ -15,6 +16,7 @@ class Planet {
     this.gravity,
     this.description,
     this.image,
+    this.backgroundImg,
   });
 }
 
@@ -27,6 +29,7 @@ List<Planet> planets = [
     gravity: "3.711 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/mars.png",
+    backgroundImg: "assets/img/marsBG.jpg",
   ),
   Planet(
     id: "2",
@@ -36,6 +39,7 @@ List<Planet> planets = [
     gravity: "11.15 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/neptune.png",
+    backgroundImg: "assets/img/neptuneBG.jpg",
   ),
   Planet(
     id: "3",
@@ -45,6 +49,7 @@ List<Planet> planets = [
     gravity: "1.622 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/moon.png",
+    backgroundImg: "assets/img/MoonBG.jpg",
   ),
   Planet(
     id: "4",
@@ -54,6 +59,7 @@ List<Planet> planets = [
     gravity: "9.807 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/earth.png",
+    backgroundImg: "assets/img/EarthBG.jpg",
   ),
   Planet(
     id: "5",
@@ -63,5 +69,6 @@ List<Planet> planets = [
     gravity: "3.7 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/mercury.png",
+    backgroundImg: "assets/img/MercuryBG.jpg",
   ),
 ];
