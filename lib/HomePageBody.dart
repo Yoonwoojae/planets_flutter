@@ -5,7 +5,7 @@ import 'PlanetRow.dart';
 class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Expanded(
+    return Expanded(
       child: Container(
         color: Color(0xFF736AB7),
         child: CustomScrollView(
