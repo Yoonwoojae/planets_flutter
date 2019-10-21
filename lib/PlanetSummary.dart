@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planets_flutter/detailPage.dart';
 import 'package:planets_flutter/model/Planet.dart';
+import 'Style.dart';
 
 class PlanetSummary extends StatelessWidget {
   final Planet planet;
@@ -117,28 +118,4 @@ class PlanetSummary extends StatelessWidget {
           ),
         ));
   }
-}
-
-TextStyle baseTextStyle() {
-  return TextStyle(fontFamily: 'Poppins');
-}
-
-TextStyle headerTextStyle() {
-  return baseTextStyle().copyWith(
-    color: Colors.white,
-    fontSize: 18.0,
-    fontWeight: FontWeight.w600,
-  );
-}
-
-TextStyle regularTextStyle() {
-  return baseTextStyle().copyWith(
-    color: Color(0xffb6b2df),
-    fontSize: 9.0,
-    fontWeight: FontWeight.w400,
-  );
-}
-
-TextStyle subHeaderTextStyle() {
-  return regularTextStyle().copyWith(fontSize: 12.0);
 }
