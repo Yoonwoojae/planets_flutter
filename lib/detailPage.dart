@@ -15,7 +15,7 @@ class DetailPage extends StatelessWidget {
       body: Container(
         constraints: BoxConstraints.expand(),
         color: Color(0xFF736AB7),
-        child: new Stack(
+        child: Stack(
           children: <Widget>[
             _getBackground(planet),
             _getGradient(),
@@ -56,19 +56,19 @@ Container _getGradient() {
 
 Widget _getContent(Planet planet) {
   final _overviewTitle = "Overview".toUpperCase();
-  return new ListView(
-    padding: new EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
+  return ListView(
+    padding: EdgeInsets.fromLTRB(0.0, 72.0, 0.0, 32.0),
     children: <Widget>[
       PlanetSummary(
         planet,
         horizontal: false,
       ),
       Container(
-        padding: new EdgeInsets.symmetric(horizontal: 32.0),
-        child: new Column(
+        padding: EdgeInsets.symmetric(horizontal: 32.0),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Text(
+            Text(
               _overviewTitle,
               style: headerTextStyle(),
             ),
@@ -82,24 +82,8 @@ Widget _getContent(Planet planet) {
 }
 
 Container _getToolbar(BuildContext context) {
-  return new Container(
-    margin: new EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-    child: new BackButton(color: Colors.white),
+  return Container(
+    margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+    child: BackButton(color: Colors.white),
   );
 }
-
-/*
-Column(
-mainAxisAlignment: MainAxisAlignment.center,
-children: <Widget>[
-Text(planet.name),
-Hero(
-tag: "planet-hero-${planet.id}",
-child: Image.asset(
-planet.image,
-width: 96.0,
-height: 96.0,
-),
-)
-],
-),*/
